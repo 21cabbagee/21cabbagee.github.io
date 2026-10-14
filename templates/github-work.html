@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Browse Saurabh Pandey's public GitHub repository archive, with searchable project names, descriptions and languages."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Saurabh Pandey" />
+    <meta property="og:title" content="GitHub work archive — Saurabh Pandey" />
+    <meta
+      property="og:description"
+      content="A searchable index of public repositories owned by @21cabbagee."
+    />
+    <meta
+      property="og:url"
+      content="https://21cabbagee.github.io/github-work.html"
+    />
+    <meta
+      property="og:image"
+      content="https://21cabbagee.github.io/images/hero.webp"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GitHub work archive — Saurabh Pandey" />
+    <meta
+      name="twitter:description"
+      content="A searchable index of public repositories owned by @21cabbagee."
+    />
+    <meta
+      name="twitter:image"
+      content="https://21cabbagee.github.io/images/hero.webp"
+    />
+    <title>GitHub work archive — Saurabh Pandey</title>
+    <link
+      rel="canonical"
+      href="https://21cabbagee.github.io/github-work.html"
+    />
+    <link rel="icon" href="./mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="./index.html" aria-label="Saurabh Pandey, home">
+          <span class="brand-mark" aria-hidden="true">SP<span>/</span></span>
+          <span class="brand-name"
+            >Saurabh Pandey<span class="brand-period">.</span></span
+          >
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="site-nav"
+          aria-expanded="false"
+          aria-label="Open navigation"
+        >
+          <span></span><span></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <a href="./index.html#experience">Experience</a>
+          <a href="./index.html#projects">Projects</a>
+          <a href="./github-work.html" aria-current="page">GitHub archive</a>
+          <a href="./index.html#skills">Skills</a>
+          <a href="./index.html#background">Background</a>
+          <a class="nav-contact" href="./index.html#contact"
+            >Contact <span aria-hidden="true">↗</span></a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="archive-hero shell" aria-labelledby="archive-title">
+        <div class="archive-copy">
+          <p class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            PUBLIC REPOSITORY INDEX <span class="eyebrow-slash">/</span> 14
+            OCTOBER 2026
+          </p>
+          <h1 id="archive-title">A wider look<br /><em>at the work.</em></h1>
+          <p class="archive-lede">
+            A searchable snapshot of
+            <strong>__REPO_COUNT__ public repositories</strong> owned by
+            <a
+              href="https://github.com/21cabbagee"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@21cabbagee</a
+            >. These are repository links—not claims that every entry is a
+            finished product.
+          </p>
+          <a
+            class="button button-primary"
+            href="https://github.com/21cabbagee?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open GitHub profile <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <figure class="archive-avatar-card">
+          <img
+            src="./images/github-avatar.webp"
+            alt="Illustrated avatar used on the public GitHub profile @21cabbagee"
+            width="460"
+            height="460"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>PROFILE AVATAR</span>
+            <strong>@21cabbagee</strong>
+          </figcaption>
+          <span class="avatar-card-index" aria-hidden="true">01 / 77</span>
+        </figure>
+        <div
+          class="archive-total"
+          aria-label="__REPO_COUNT__ public repositories in this snapshot"
+        >
+          <span class="archive-total-label">PUBLIC / NON-FORK</span>
+          <strong>__REPO_COUNT__</strong>
+          <span class="archive-total-note">repositories in this snapshot</span>
+        </div>
+      </section>
+
+      <section
+        class="archive-directory shell"
+        id="repository-list"
+        aria-labelledby="repository-title"
+      >
+        <div class="archive-heading">
+          <div>
+            <p class="eyebrow">The open index</p>
+            <h2 id="repository-title">Find a<br /><em>thread.</em></h2>
+          </div>
+          <p class="source-note">
+            Search names, GitHub descriptions or primary languages.<br />
+            Every card opens its public source repository.
+          </p>
+        </div>
+        <div class="archive-toolbar">
+          <label for="repo-search">Filter the repository index</label>
+          <input
+            id="repo-search"
+            name="repo-search"
+            type="search"
+            placeholder="Try a name, description, or language"
+            autocomplete="off"
+            aria-controls="repo-grid"
+            aria-describedby="repo-search-note"
+          />
+          <p id="repo-search-note" class="archive-search-note">
+            Search runs locally on this page; it does not call GitHub.
+          </p>
+          <p
+            id="repo-status"
+            class="repo-status"
+            role="status"
+            aria-live="polite"
+          >
+            __REPO_COUNT__ public repositories
+          </p>
+        </div>
+        <div class="repo-grid" id="repo-grid">
+          <!-- REPOSITORY_CARDS -->
+        </div>
+        <p class="repo-empty" id="repo-empty" hidden>
+          No repositories match that search. Try another name, description or
+          language.
+        </p>
+        <p class="archive-note">
+          Snapshot taken 14 October 2026 from public GitHub repository metadata
+          for
+          <a
+            href="https://github.com/21cabbagee"
+            target="_blank"
+            rel="noopener noreferrer"
+            >@21cabbagee</a
+          >. Forks and the profile/config repository are excluded. New
+          repositories appear here after the snapshot is refreshed. A repository
+          link is not necessarily a live demo or an independent review of its
+          contents.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a
+          class="brand footer-brand"
+          href="./index.html"
+          aria-label="Back to portfolio home"
+        >
+          <span class="brand-mark" aria-hidden="true">SP<span>/</span></span>
+          <span class="brand-name"
+            >Saurabh Pandey<span class="brand-period">.</span></span
+          >
+        </a>
+        <p class="footer-social-copy">
+          <a
+            href="https://www.linkedin.com/in/saurabbh-pandeey/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <span aria-hidden="true">·</span>
+          <a
+            href="https://x.com/21ccabbage"
+            target="_blank"
+            rel="noopener noreferrer"
+            >X / Twitter</a
+          >
+          <span aria-hidden="true">·</span>
+          <a
+            href="https://github.com/21cabbagee"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </p>
+        <a class="back-top" href="./index.html#projects"
+          >BACK TO PORTFOLIO <span aria-hidden="true">↗</span></a
+        >
+        <span class="footer-year">© 2026</span>
+      </div>
+    </footer>
+  </body>
+</html>

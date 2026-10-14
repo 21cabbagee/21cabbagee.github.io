@@ -53,3 +53,28 @@ if ("IntersectionObserver" in window && trackedSections.length) {
   );
   trackedSections.forEach((section) => observer.observe(section));
 }
+
+const searchInput = document.querySelector("#repo-search");
+const repoCards = [...document.querySelectorAll(".repo-card")];
+const repoStatus = document.querySelector("#repo-status");
+const repoEmpty = document.querySelector("#repo-empty");
+
+if (searchInput && repoCards.length && repoStatus && repoEmpty) {
+  const total = repoCards.length;
+  const updateRepositoryResults = () => {
+    const query = searchInput.value.trim().toLocaleLowerCase();
+    let visible = 0;
+
+    for (const card of repoCards) {
+      const matches = !query || (card.dataset.search ?? "").includes(query);
+      card.hidden = !matches;
+      if (matches) visible += 1;
+    }
+
+    repoStatus.textContent = `Showing ${visible} of ${total} public repositories`;
+    repoEmpty.hidden = visible !== 0;
+  };
+
+  searchInput.addEventListener("input", updateRepositoryResults);
+  updateRepositoryResults();
+}

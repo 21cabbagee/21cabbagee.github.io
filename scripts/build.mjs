@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
+await import("./render-github-work.mjs");
 const source = resolve(root, "public");
 const output = resolve(root, "dist");
 await rm(output, { recursive: true, force: true });

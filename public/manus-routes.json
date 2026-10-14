@@ -1,1 +1,9 @@
-{ "routes": [{ "path": "/", "title": "Saurabh Pandey — Portfolio" }] }
+{
+  "routes": [
+    { "path": "/", "title": "Saurabh Pandey — Portfolio" },
+    {
+      "path": "/github-work.html",
+      "title": "GitHub work archive — Saurabh Pandey"
+    }
+  ]
+}
